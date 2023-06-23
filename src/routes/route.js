@@ -10,6 +10,10 @@ router.get('/ping',function(req,res){
 router.get('/dogs',dogController.getDogs)
 router.post('/dog',dogController.createDog)
 
+router.all('/*',function(req,res){
+    res.status(404).send({status:false,message:"page not found"})
+})
+
 
 
 
